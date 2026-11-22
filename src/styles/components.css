@@ -1,0 +1,3326 @@
+/* Styling detail buat header, landing page, discover, sampai poster My Space */
+
+/* Bagian header navigasi atas dan menu mobile */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background-color: rgba(11, 19, 44, 0.55);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  transition:
+    background-color var(--theme-duration) var(--theme-ease),
+    border-color var(--theme-duration) var(--theme-ease);
+}
+
+[data-theme='light'] .site-header {
+  background-color: rgba(183, 197, 223, 0.68);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: var(--header-h);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.wordmark strong {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.wordmark em {
+  font-family: var(--font-serif-italic);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  opacity: 0.68;
+}
+
+.site-nav,
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-nav__list > li {
+  display: inline-flex;
+}
+
+.site-nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.35rem 0.95rem;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--muted);
+  border-radius: var(--radius-pill);
+  transition: color 0.18s var(--ease), background-color 0.18s var(--ease);
+}
+
+.site-nav__link:hover {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.site-nav__link.is-active {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.16);
+  font-weight: 600;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  color: var(--ink);
+  box-shadow: var(--control-shadow);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.18s var(--ease), background-color 0.18s var(--ease),
+    box-shadow 0.18s var(--ease), transform 0.18s var(--ease);
+}
+
+.icon-btn:hover {
+  background: var(--control-bg-hover);
+  border-color: var(--control-border-hover);
+  box-shadow: var(--control-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.icon-btn--plain {
+  border-color: transparent;
+  background: transparent;
+}
+
+.theme-toggle-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-btn__icons {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-btn__sun,
+.theme-toggle-btn__moon {
+  position: absolute;
+  inset: 0;
+  transition:
+    transform 0.38s cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.theme-toggle-btn.is-dark .theme-toggle-btn__sun {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg) scale(1);
+}
+
+.theme-toggle-btn.is-dark .theme-toggle-btn__moon {
+  opacity: 0;
+  transform: translateY(14px) rotate(45deg) scale(0.75);
+}
+
+.theme-toggle-btn.is-light .theme-toggle-btn__sun {
+  opacity: 0;
+  transform: translateY(-14px) rotate(-45deg) scale(0.75);
+}
+
+.theme-toggle-btn.is-light .theme-toggle-btn__moon {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg) scale(1);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 19px;
+  height: 19px;
+  padding-inline: 5px;
+  margin-left: 0.35rem;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  color: #141c33;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* Bagian footer dan link navigasi bawah */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: rgba(11, 19, 44, 0.35);
+  backdrop-filter: blur(12px);
+  padding-block: 3.5rem 2.25rem;
+  margin-top: auto;
+  transition:
+    background-color var(--theme-duration) var(--theme-ease),
+    border-color var(--theme-duration) var(--theme-ease);
+}
+
+[data-theme='light'] .site-footer {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.site-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.75rem 2.5rem;
+}
+
+.site-footer__brand {
+  max-width: 36ch;
+}
+
+.site-footer__tagline {
+  margin-top: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+}
+
+.site-footer__nav a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--muted);
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.18s var(--ease);
+}
+
+.site-footer__nav a:hover {
+  color: var(--ink);
+}
+
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 2.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+/* Tata letak dan komponen visual di Landing Page */
+
+.hark-landing {
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.hark-art-fallback {
+  width: 100%;
+  height: 100%;
+  min-height: 140px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #121829;
+}
+
+.hark-art-fallback span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.hark-art-fallback strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.hark-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.65rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.18);
+  color: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Bagian 1: Hero utama dengan tata letak 2 kolom */
+
+.hark-hero-wrap {
+  padding: clamp(0.75rem, 2vw, 1.5rem) var(--gutter) 0;
+  max-width: 1380px;
+  margin-inline: auto;
+}
+
+.hark-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #0b1433 0%,
+    #162550 28%,
+    #2f3e68 56%,
+    #5f6885 80%,
+    #97969f 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: var(--shadow-lift);
+  color: #ffffff;
+}
+
+@media (min-width: 960px) {
+  .hark-hero {
+    grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr);
+    min-height: 610px;
+  }
+}
+
+.hark-hero__visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.5rem, 3.5vw, 2.75rem);
+  background: rgba(10, 17, 38, 0.24);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.hark-hero__canvas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-block: auto;
+  padding-block: 1rem;
+}
+
+.hark-hero__main-album {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #141a2b;
+  box-shadow: 0 22px 44px rgba(6, 11, 28, 0.36);
+  max-width: 440px;
+}
+
+.hark-hero__cover-frame {
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #cfd7e8;
+  box-shadow: 0 8px 18px rgba(10, 16, 36, 0.18);
+}
+
+.hark-hero__cover-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hark-hero__album-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.hark-hero__album-meta .hark-chip {
+  background: #e4e9f4;
+  color: #2c3857;
+  margin-bottom: 0.35rem;
+}
+
+.hark-hero__album-meta h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.15;
+  color: #141a2b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hark-hero__album-meta p {
+  font-size: 0.84rem;
+  color: #4f5973;
+}
+
+.hark-float-card {
+  padding: 0.9rem 1.1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #141a2b;
+  box-shadow: 0 14px 32px rgba(6, 11, 28, 0.28);
+  max-width: 340px;
+  backdrop-filter: blur(10px);
+}
+
+.hark-float-card--top {
+  align-self: flex-end;
+}
+
+.hark-float-card--bottom {
+  align-self: flex-start;
+  margin-left: clamp(0rem, 3vw, 2rem);
+}
+
+.hark-float-card__label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #545f7a;
+  margin-bottom: 0.3rem;
+}
+
+.hark-float-card p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: #141a2b;
+}
+
+.hark-float-card__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.45rem;
+}
+
+.hark-float-card__hex {
+  font-size: 11px;
+  font-weight: 600;
+  color: #141a2b;
+}
+
+.hark-mini-swatches {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.hark-mini-swatch {
+  width: 34px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1px solid rgba(18, 24, 41, 0.16);
+  transition: transform 0.16s var(--ease);
+}
+
+.hark-mini-swatch:hover {
+  transform: scale(1.08);
+}
+
+.hark-mini-swatch.is-active {
+  outline: 2px solid #141a2b;
+  outline-offset: 2px;
+}
+
+.hark-learn-pill {
+  align-self: flex-start;
+  margin-top: 1rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  color: #1b2234;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(6, 11, 28, 0.24);
+  transition: transform 0.18s var(--ease), background-color 0.18s var(--ease);
+}
+
+.hark-learn-pill:hover {
+  transform: translateY(-1px);
+  background: #eef2fa;
+}
+
+/* Sisi kanan hero: judul Sunroom, pengantar, dan form pencarian cepat */
+.hark-hero__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2.25rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.hark-brand-box {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.15rem;
+}
+
+.hark-brand-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 4.6vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.hark-brand-title strong {
+  font-weight: 600;
+}
+
+.hark-brand-title em {
+  font-family: var(--font-serif-italic);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.06em;
+  color: rgba(214, 222, 242, 0.68);
+}
+
+.hark-brand-sub {
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 32ch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hark-brand-sub span {
+  display: block;
+}
+
+.hark-entry-stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.45rem;
+}
+
+.hark-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 46px;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 500;
+  transition: transform 0.18s var(--ease), background-color 0.18s var(--ease),
+    opacity 0.18s var(--ease);
+}
+
+.hark-pill-btn--solid {
+  background: #ffffff;
+  color: #1f2536;
+  box-shadow: 0 4px 14px rgba(7, 12, 28, 0.18);
+}
+
+.hark-pill-btn--solid:hover {
+  background: #f0f3fa;
+  transform: translateY(-1px);
+}
+
+/* Tombol kapsul dengan efek hover dan bayangan halus */
+.hark-pill-btn--mist {
+  background: rgba(168, 175, 195, 0.68);
+  color: #222838;
+  font-weight: 500;
+}
+
+.hark-pill-btn--mist:hover {
+  background: rgba(196, 202, 220, 0.88);
+  color: #141a2b;
+}
+
+.hark-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-block: 0.3rem;
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.hark-divider::before,
+.hark-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hark-entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+/* Form input pencarian cepat berbentuk kapsul */
+.hark-entry-input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(48, 56, 78, 0.68);
+  color: #ffffff;
+  font-size: 0.86rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.hark-entry-input::placeholder {
+  color: rgba(208, 214, 232, 0.52);
+}
+
+.hark-entry-input:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 2px;
+}
+
+.hark-brand-footnote {
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.62);
+  max-width: 34ch;
+  margin-top: 0.6rem;
+}
+
+.hark-brand-footnote a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Bagian 2: Deretan 5 kartu lagu horizontal beserta balon kutipan */
+
+.hark-strip-section {
+  padding-block: clamp(3.5rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4.5rem);
+  overflow-x: clip;
+}
+
+.hark-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+  gap: 1.15rem;
+  align-items: start;
+}
+
+@media (min-width: 1040px) {
+  .hark-strip-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.hark-strip-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.hark-strip-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0.7rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+
+.hark-strip-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+}
+
+.hark-strip-item.is-active .hark-strip-card {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.65);
+  box-shadow: var(--shadow-lift);
+}
+
+.hark-strip-card__art {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 11px;
+  overflow: hidden;
+  background: var(--surface-sunk);
+}
+
+.hark-strip-card__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hark-strip-card__tag {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: rgba(14, 21, 45, 0.78);
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.hark-strip-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.65rem 0.25rem 0.25rem;
+}
+
+.hark-strip-card__body strong {
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hark-strip-card__body > span {
+  font-size: 0.78rem;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hark-strip-card__bar {
+  display: flex;
+  gap: 3px;
+  height: 10px;
+  margin-top: 0.35rem;
+}
+
+.hark-strip-card__bar span {
+  flex: 1;
+  border-radius: 3px;
+}
+
+.hark-speech-bubble {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  color: #161c2e;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(6, 11, 28, 0.32);
+}
+
+.hark-speech-bubble::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* Bagian 3: Panggung moodboard interaktif dengan gradien dinamis */
+
+.hark-stage-section {
+  padding-block: clamp(2rem, 4vw, 3.5rem);
+}
+
+.hark-wide-stage {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-strong);
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  box-shadow: var(--shadow-lift);
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  transition: background 0.35s var(--ease);
+}
+
+.hark-wide-stage__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hark-wide-stage__identity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hark-wide-stage__dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.hark-wide-stage__identity strong {
+  display: block;
+  font-size: 0.94rem;
+  color: #ffffff;
+}
+
+.hark-wide-stage__identity span {
+  display: block;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hark-wide-stage__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.hark-stage-tab {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.18s var(--ease);
+}
+
+.hark-stage-tab:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.hark-stage-tab.is-active {
+  background: #ffffff;
+  color: #161c2e;
+  border-color: #ffffff;
+}
+
+.hark-wide-stage__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 920px) {
+  .hark-wide-stage__content {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr) minmax(0, 0.9fr);
+  }
+}
+
+.hark-stage-side-card {
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+/* Kartu pendamping bernuansa terang buat teks rasa dan daftar kode hex */
+.hark-stage-side-card--light {
+  background: rgba(242, 239, 244, 0.92);
+  color: #161c2e;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  padding: 1.65rem 1.75rem;
+  gap: 0.95rem;
+}
+
+.hark-stage-side-card__eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.hark-stage-side-card--light .hark-stage-side-card__eyebrow {
+  color: #55607a;
+}
+
+.hark-stage-side-card h3,
+.hark-stage-side-card__feeling {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+  line-height: 1.08;
+}
+
+.hark-stage-side-card--light .hark-stage-side-card__feeling {
+  color: #141a2b;
+}
+
+.hark-stage-side-card p,
+.hark-stage-side-card__caption {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.hark-stage-side-card--light .hark-stage-side-card__caption {
+  color: #465068;
+}
+
+.hark-stage-side-card__pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.35rem;
+}
+
+.hark-light-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.26rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(20, 26, 43, 0.1);
+  color: #1f273b;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.hark-stage-center-card {
+  background: rgba(255, 255, 255, 0.96);
+  color: #141a2b;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 22px;
+  padding: 1.15rem;
+  box-shadow: var(--shadow-lift);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hark-stage-center-card__art {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  max-height: 330px;
+  margin-inline: auto;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #d3dbea;
+}
+
+.hark-stage-center-card__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hark-stage-hex-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hark-stage-hex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface-sunk);
+  font-size: 0.82rem;
+  transition: all 0.16s var(--ease);
+}
+
+.hark-stage-hex-row.is-active {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.hark-stage-hex-row--light {
+  background: rgba(214, 216, 224, 0.55);
+  border: 1px solid rgba(20, 26, 43, 0.08);
+  color: #1f273b;
+}
+
+.hark-stage-hex-row--light:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.hark-stage-hex-row--light.is-active {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #141a2b;
+  box-shadow: 0 4px 12px rgba(20, 26, 43, 0.08);
+}
+
+.hark-stage-hex-row__swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.hark-stage-hex-row code {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.hark-stage-hex-row--light code {
+  color: #55607a;
+}
+
+.hark-wide-stage__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.hark-stage-action-pill {
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  transition: transform 0.18s var(--ease), background-color 0.18s var(--ease);
+}
+
+.hark-stage-action-pill:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.hark-stage-action-pill--primary {
+  background: #ffffff;
+  color: #161c2e;
+  border-color: #ffffff;
+  font-weight: 600;
+}
+
+.hark-stage-action-pill--primary:hover {
+  background: #eef2fa;
+  color: #121829;
+}
+
+/* Bagian 4: Penjelasan fitur-fitur dengan layout zig-zag kiri-kanan */
+
+.hark-features-section {
+  padding-block: clamp(3rem, 7vw, 6rem);
+}
+
+.hark-feature-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.hark-feature-row:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .hark-feature-row {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  }
+
+  .hark-feature-row--reverse {
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  }
+}
+
+.hark-feature-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 42ch;
+}
+
+.hark-feature-copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.hark-feature-copy p + p {
+  margin-top: 0.1rem;
+}
+
+.hark-feature-copy h2 ~ p {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.hark-visual-stage {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-lift);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+}
+
+.hark-visual-stage--twilight {
+  background: linear-gradient(
+    180deg,
+    #111d42 0%,
+    #283864 48%,
+    #646d8a 82%,
+    #95949e 100%
+  );
+}
+
+.hark-visual-stage--dusk {
+  background: linear-gradient(
+    165deg,
+    #15234b 0%,
+    #384870 46%,
+    #777c96 80%,
+    #a89fa3 100%
+  );
+}
+
+.hark-floating-question {
+  align-self: flex-end;
+  background: rgba(15, 23, 48, 0.82);
+  color: #ffffff;
+  padding: 0.65rem 1rem;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  max-width: 260px;
+  box-shadow: 0 10px 24px rgba(6, 11, 28, 0.28);
+}
+
+.hark-floating-reply {
+  align-self: flex-start;
+  background: #ffffff;
+  color: #161c2e;
+  padding: 0.65rem 1rem;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 10px 24px rgba(6, 11, 28, 0.22);
+}
+
+.hark-matrix-card {
+  background: rgba(255, 255, 255, 0.95);
+  color: #161c2e;
+  border-radius: 16px;
+  padding: 1.15rem;
+  box-shadow: 0 18px 40px rgba(6, 11, 28, 0.3);
+}
+
+.hark-matrix-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(22, 28, 46, 0.1);
+}
+
+.hark-matrix-card__head strong {
+  font-size: 0.88rem;
+}
+
+.hark-matrix-card__head span {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #55607a;
+}
+
+.hark-matrix-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hark-matrix-row {
+  display: grid;
+  grid-template-columns: 24px 36px minmax(0, 1fr) auto 76px;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
+  text-align: left;
+  color: #161c2e;
+  transition: background-color 0.16s var(--ease);
+}
+
+.hark-matrix-row:hover {
+  background: rgba(22, 28, 46, 0.06);
+}
+
+.hark-matrix-row__idx {
+  font-size: 11px;
+  font-weight: 600;
+  color: #55607a;
+}
+
+.hark-matrix-row__thumb {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #d3dbea;
+}
+
+.hark-matrix-row__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hark-matrix-row__title {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hark-matrix-row__title strong {
+  font-size: 0.82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hark-matrix-row__title small {
+  font-size: 0.72rem;
+  color: #55607a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hark-matrix-row__mood {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: #e6ebf5;
+  color: #283452;
+}
+
+.hark-matrix-row__swatches {
+  display: flex;
+  gap: 2px;
+  height: 12px;
+}
+
+.hark-matrix-row__swatches i {
+  flex: 1;
+  border-radius: 2px;
+}
+
+/* Baris 2: Tumpukan tombol suasana hati yang terhubung ke Discover */
+.hark-mood-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  max-width: 440px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.hark-mood-pill-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #161c2e;
+  box-shadow: 0 10px 24px rgba(6, 11, 28, 0.22);
+  transition: transform 0.18s var(--ease), background-color 0.18s var(--ease);
+}
+
+.hark-mood-pill-row:hover {
+  transform: translateX(4px);
+  background: #ffffff;
+}
+
+.hark-mood-pill-row__action {
+  padding: 0.25rem 0.65rem;
+  border-radius: 8px;
+  background: #eef2fa;
+  border: 1px solid rgba(22, 28, 46, 0.15);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #161c2e;
+  flex-shrink: 0;
+}
+
+.hark-mood-pill-row__text {
+  font-size: 0.78rem;
+  color: #55607a;
+  flex-shrink: 0;
+}
+
+.hark-mood-pill-row__cover {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.hark-mood-pill-row__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hark-mood-pill-row__album {
+  font-size: 0.82rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  text-align: left;
+}
+
+.hark-mood-pill-row__dots {
+  display: flex;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.hark-mood-pill-row__dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+/* Baris 3: Susunan grid 2x2 pratinjau kartu koleksi buat My Space */
+.hark-custom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.hark-custom-panel {
+  background: rgba(255, 255, 255, 0.93);
+  color: #161c2e;
+  border-radius: 16px;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  box-shadow: 0 12px 28px rgba(6, 11, 28, 0.24);
+  border: 2px solid transparent;
+  transition: transform 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+
+.hark-custom-panel.is-selected {
+  border-color: #161c2e;
+  transform: translateY(-2px);
+}
+
+.hark-custom-panel__select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  text-align: left;
+  color: inherit;
+}
+
+.hark-custom-panel__top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.hark-custom-panel__cover {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.hark-custom-panel__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hark-custom-panel__info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hark-custom-panel__info span {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #3e4e78;
+  font-weight: 600;
+}
+
+.hark-custom-panel__info strong {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hark-custom-panel__info small {
+  font-size: 0.74rem;
+  color: #55607a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hark-custom-panel__swatches {
+  display: flex;
+  gap: 3px;
+  height: 12px;
+}
+
+.hark-custom-panel__swatches span {
+  flex: 1;
+  border-radius: 3px;
+}
+
+.hark-custom-panel__apply {
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #161c2e;
+  padding: 0.28rem 0.6rem;
+  border-radius: 6px;
+  background: #e6ebf5;
+}
+
+.hark-custom-panel__apply:hover {
+  background: #161c2e;
+  color: #ffffff;
+}
+
+/* Bagian 5: Manifesto penutup dan tombol ajakan ke My Space */
+
+.hark-manifesto-section {
+  padding-block: clamp(3.5rem, 7vw, 6.5rem) clamp(4.5rem, 8vw, 7.5rem);
+  text-align: center;
+}
+
+.hark-manifesto-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.65rem;
+}
+
+.hark-manifesto-statement {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.8vw, 3.65rem);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  max-width: 22ch;
+  color: var(--ink);
+}
+
+.hark-outline-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0.78rem 2.15rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  box-shadow: var(--control-shadow);
+  backdrop-filter: blur(10px);
+  color: var(--ink);
+  font-size: 0.96rem;
+  font-weight: 600;
+  transition: background-color 0.18s var(--ease), border-color 0.18s var(--ease),
+    box-shadow 0.18s var(--ease), transform 0.18s var(--ease);
+}
+
+.hark-outline-pill:hover {
+  background: var(--control-bg-hover);
+  border-color: var(--control-border-hover);
+  box-shadow: var(--control-shadow-hover);
+  transform: translateY(-1px);
+}
+
+/* Kotak cakrawala di bagian bawah */
+.hark-horizon-wrap {
+  position: relative;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 1.25rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #0b1433 0%,
+    #192854 32%,
+    #354570 62%,
+    #69728f 85%,
+    #9897a0 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: var(--shadow-lift);
+  color: #ffffff;
+}
+
+.hark-horizon-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.hark-horizon-card {
+  max-width: 360px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+/* Styling halaman Discover, kartu album, pop-up modal, dan halaman My Space */
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 244px), 1fr));
+  gap: clamp(1.1rem, 2.2vw, 1.65rem);
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: border-color 0.2s var(--ease), box-shadow 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+
+.album-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-3px);
+}
+
+.album-card__art-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--surface-sunk);
+}
+
+.album-card__art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-card__art-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.album-card__art-fallback-mark {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.album-card__art-fallback-title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.15;
+}
+
+.album-card__save {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 22, 46, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  transition: background-color 0.18s var(--ease), color 0.18s var(--ease),
+    transform 0.18s var(--ease);
+}
+
+.album-card__save:hover {
+  transform: scale(1.06);
+}
+
+.album-card__save.is-saved {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #141c33;
+}
+
+.album-card--clickable {
+  cursor: pointer;
+}
+
+.album-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.15rem 1.2rem 1.25rem;
+}
+
+.album-card__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.album-card__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.album-card__title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.24;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.album-card__artist {
+  font-size: 0.85rem;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.album-card__palette-wrap {
+  padding-top: 0.15rem;
+}
+
+.album-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--line);
+}
+
+.album-card__hint {
+  font-size: 0.72rem;
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+.album-card__store {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.album-card__store:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Baris 5 kotak swatch warna palet */
+
+.palette {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.palette__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.palette__row {
+  display: flex;
+  gap: 4px;
+  height: 14px;
+}
+
+.palette__swatch {
+  flex: 1;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  min-width: 0;
+}
+
+.palette--large .palette__row {
+  height: 34px;
+  gap: 6px;
+}
+
+.swatch-button {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  position: relative;
+  transition: transform 0.16s var(--ease);
+}
+
+.swatch-button:hover {
+  transform: translateY(-2px);
+}
+
+.swatch-button.is-selected::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+}
+
+/* Kolom search input dan chips filter mood di halaman Discover */
+
+.discover-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.discover-head__title {
+  max-width: 24ch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.discover-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.5rem 0.3rem 1.1rem;
+}
+
+.search-bar:focus-within {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.16);
+}
+
+.search-bar__icon {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.search-bar__input {
+  flex: 1;
+  min-width: 0;
+  min-height: 42px;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.search-bar__input::placeholder {
+  color: var(--muted);
+}
+
+.search-bar__input:focus {
+  outline: none;
+}
+
+.search-bar__input::-webkit-search-cancel-button,
+.search-bar__input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.search-bar__clear {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+
+.search-bar__clear:hover {
+  background: var(--surface-sunk);
+  color: var(--ink);
+}
+
+.mood-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mood-chip {
+  min-height: 40px;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  backdrop-filter: blur(10px);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 0.18s var(--ease);
+}
+
+.mood-chip:hover {
+  background: var(--control-bg-hover);
+  border-color: var(--control-border-hover);
+  color: var(--ink);
+}
+
+.mood-chip.is-active {
+  background: var(--active-bg);
+  border-color: var(--active-border);
+  color: var(--active-ink);
+  font-weight: 600;
+}
+
+/* Panel status kosong, animasi loading spinner, dan pesan error */
+
+.state-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+}
+
+.state-panel__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+}
+
+.state-panel__text {
+  max-width: 46ch;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.results-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-block: 0.9rem;
+  border-top: 1px solid var(--line);
+  margin-bottom: 1.5rem;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.results-meta strong {
+  color: var(--ink);
+}
+
+.inline-notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  font-size: 0.86rem;
+  color: var(--ink);
+}
+
+.skeleton-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-sunk) 25%,
+    var(--surface) 50%,
+    var(--surface-sunk) 75%
+  );
+  background-size: 200% 100%;
+  animation: sunroom-shimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton--art {
+  aspect-ratio: 1 / 1;
+}
+
+.skeleton--line {
+  height: 10px;
+  border-radius: 4px;
+}
+
+.skeleton-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+}
+
+@keyframes sunroom-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Pop-up modal buat nampilin detail album dan tabel kode warna */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.75rem, 3vw, 2.5rem);
+  background: rgba(8, 13, 31, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  max-height: min(92vh, 900px);
+  overflow-y: auto;
+  background: var(--surface-solid);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lift);
+  color: var(--ink);
+}
+
+.modal__close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  color: var(--ink);
+}
+
+.modal__close:hover {
+  background: #ffffff;
+  color: #161c2e;
+}
+
+.modal__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+}
+
+.modal__art {
+  position: relative;
+  background: var(--surface-sunk);
+  min-height: 280px;
+}
+
+.modal__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.65rem;
+  padding: clamp(1.85rem, 3.8vw, 2.75rem);
+}
+
+.modal__header-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding-right: 2.25rem;
+}
+
+.modal__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  line-height: 1.12;
+  margin-top: 0.15rem;
+}
+
+.modal__artist {
+  font-size: 1.04rem;
+  color: var(--muted);
+}
+
+.modal__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.45rem;
+}
+
+.modal__description-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.15rem 1.35rem;
+  border-radius: 14px;
+  background: var(--surface-sunk);
+  border: 1px solid var(--line);
+}
+
+.modal__description-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.modal__description-text {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.modal__palette-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.modal__hex-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.modal__hex-chip {
+  padding: 0.32rem 0.25rem;
+  border-radius: 6px;
+  background: var(--surface-sunk);
+  border: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--muted);
+}
+
+.modal__cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+
+.modal__reveal-hint {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.modal__note {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.55;
+  border-top: 1px solid var(--line);
+  padding-top: 1.1rem;
+  margin-top: auto;
+}
+
+/* Latar belakang langit berbintang dan kilatan meteor bergerak */
+
+:root {
+  --meteor-head: #243666;
+  --meteor-glow: rgba(36, 54, 102, 0.38);
+  --meteor-tail-start: rgba(36, 54, 102, 0.56);
+  --meteor-tail-mid: rgba(74, 96, 152, 0.24);
+  --star-color: rgba(36, 54, 102, 0.48);
+  --star-glow: rgba(255, 255, 255, 0.65);
+}
+
+[data-theme='dark'] {
+  --meteor-head: #ffffff;
+  --meteor-glow: rgba(206, 222, 255, 0.72);
+  --meteor-tail-start: rgba(255, 255, 255, 0.78);
+  --meteor-tail-mid: rgba(190, 210, 255, 0.34);
+  --star-color: #ffffff;
+  --star-glow: rgba(255, 255, 255, 0.65);
+}
+
+.meteor-sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Lapisan transisi langit ganda buat efek transisi matahari terbit/tenggelam */
+.sky-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.sky-backdrop--day {
+  background: linear-gradient(
+    180deg,
+    #b1c0dc 0%,
+    #c5cfe3 34%,
+    #d6dce8 68%,
+    #e5dfd9 100%
+  );
+  opacity: 1;
+}
+
+.sky-backdrop--night {
+  background: linear-gradient(
+    180deg,
+    #0b132c 0%,
+    #142147 26%,
+    #28375e 52%,
+    #525d7b 76%,
+    #888894 100%
+  );
+  opacity: 0;
+}
+
+[data-theme='dark'] .sky-backdrop--night {
+  opacity: 1;
+}
+
+/* Efek pendaran cahaya ufuk di batas bawah layar */
+.sky-horizon-glow {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -18%;
+  height: 58vh;
+  border-radius: 50% 50% 0 0;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(226, 178, 156, 0.34) 0%,
+    rgba(176, 156, 188, 0.18) 46%,
+    transparent 76%
+  );
+  pointer-events: none;
+  transition:
+    opacity 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+  opacity: 0.75;
+  transform: translateY(0);
+}
+
+[data-theme='dark'] .sky-horizon-glow {
+  opacity: 0.42;
+  transform: translateY(8%);
+}
+
+/* Transisi halus elemen-elemen UI saat berganti tema */
+.album-card,
+.hark-strip-card,
+.hark-stage-side-card,
+.search-bar,
+.state-panel,
+.myspace-format-footer,
+.myspace-export-dock,
+.myspace-reset-dock,
+.modal,
+.confirm-modal,
+.tag {
+  transition:
+    background-color 0.38s var(--theme-ease),
+    border-color 0.38s var(--theme-ease),
+    color 0.32s var(--theme-ease),
+    box-shadow 0.32s var(--theme-ease),
+    transform 0.22s var(--ease);
+}
+
+#root > *:not(.meteor-sky) {
+  position: relative;
+  z-index: 1;
+}
+
+.meteor-sky__star {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--star-color);
+  box-shadow: 0 0 8px var(--star-glow);
+  animation: sunroom-star-twinkle 5.5s ease-in-out infinite alternate;
+}
+
+.meteor-sky__streak {
+  position: absolute;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--meteor-tail-start) 0%,
+    var(--meteor-tail-mid) 45%,
+    transparent 100%
+  );
+  opacity: 0;
+  transform: rotate(-32deg) translate3d(0, 0, 0);
+  animation-name: sunroom-meteor-fall;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation-iteration-count: infinite;
+}
+
+.meteor-sky__streak::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background: var(--meteor-head);
+  box-shadow: 0 0 12px 2.5px var(--meteor-glow);
+  transform: translateY(-50%);
+}
+
+@keyframes sunroom-meteor-fall {
+  0% {
+    opacity: 0;
+    transform: rotate(-32deg) translate3d(90px, 0, 0);
+  }
+  10% {
+    opacity: 0.82;
+  }
+  32% {
+    opacity: 0;
+    transform: rotate(-32deg) translate3d(-480px, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-32deg) translate3d(-480px, 0, 0);
+  }
+}
+
+@keyframes sunroom-star-twinkle {
+  0% {
+    opacity: 0.22;
+  }
+  100% {
+    opacity: 0.58;
+  }
+}
+
+/* Styling halaman My Space dan panggung poster moodboard */
+
+.myspace-share-toast {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1.35rem;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  color: #161c2e;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.myspace-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.85rem;
+  padding: clamp(1.75rem, 3.8vw, 2.5rem);
+  margin-bottom: 2.25rem;
+  background: var(--surface);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.myspace-aura-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem 2.5rem;
+  padding-bottom: 1.85rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.myspace-aura-hero__copy {
+  max-width: 54ch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.myspace-aura-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.myspace-aura-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.myspace-aura-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+
+.myspace-aura-hero__poem {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+.myspace-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.icon-btn--primary {
+  background: #ffffff;
+  color: #141c33;
+  border-color: #ffffff;
+}
+
+.icon-btn--primary:hover {
+  background: #eef2fa;
+  border-color: #eef2fa;
+  color: #101628;
+}
+
+.myspace-combined-spectrum {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.myspace-combined-spectrum__bar {
+  display: flex;
+  height: 14px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+}
+
+.myspace-combined-spectrum__bar span {
+  flex: 1;
+}
+
+.myspace-palettes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.myspace-palettes-scroll {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.myspace-palette-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 42px;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface-sunk);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 0.18s var(--ease);
+}
+
+.myspace-palette-pill:hover {
+  border-color: var(--ink);
+}
+
+.myspace-palette-pill.is-active {
+  background: #ffffff;
+  color: #161c2e;
+  border-color: #ffffff;
+  font-weight: 600;
+}
+
+.myspace-palette-pill__title {
+  max-width: 20ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.myspace-palette-pill__dots {
+  display: flex;
+  gap: 3px;
+}
+
+.myspace-palette-pill__dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.myspace-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--line);
+}
+
+.myspace-swatch-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.myspace-mode-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.btn-group {
+  display: inline-flex;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  overflow: hidden;
+  padding: 3px;
+  background: var(--surface-sunk);
+}
+
+.btn-group .btn {
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.42rem 1rem;
+  min-height: 36px;
+  font-size: 0.8rem;
+}
+
+.btn-group .btn.is-active {
+  background: #ffffff;
+  color: #161c2e;
+}
+
+/* Kartu poster moodboard buat kebutuhan share ke media sosial */
+.myspace-board {
+  position: relative;
+  margin-inline: auto;
+  background: var(--board-bg, var(--surface));
+  color: var(--poster-ink, var(--ink));
+  backdrop-filter: blur(22px);
+  border: 2px solid var(--board-border, var(--border-strong));
+  border-radius: 28px;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  box-shadow: var(--shadow-lift);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: max-width 0.35s var(--ease), background 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+}
+
+/* Pilihan rasio aspek poster: Square, Story 9:16, dan Board 4:3 */
+.myspace-board--story {
+  max-width: 470px;
+  padding: 2rem 1.55rem;
+}
+
+.myspace-board--story .myspace-board__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.myspace-board--square {
+  max-width: 680px;
+  padding: 2.25rem;
+}
+
+.myspace-board--square .myspace-board__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.myspace-board--wide {
+  max-width: 1120px;
+}
+
+.myspace-board__social-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-bottom: 1.65rem;
+  border-bottom: 1px solid var(--poster-line, var(--line));
+}
+
+.myspace-board__brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.myspace-board__brand {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--poster-ink, var(--ink));
+}
+
+.myspace-board__brand em {
+  font-family: var(--font-serif-italic);
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0.78;
+}
+
+.myspace-board__top-right {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.myspace-board__badge {
+  padding: 0.26rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--poster-badge-bg, rgba(255, 255, 255, 0.16));
+  border: 1px solid var(--poster-chip-border, rgba(255, 255, 255, 0.22));
+  color: var(--poster-ink, var(--ink));
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.myspace-poster-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--poster-chip-bg, rgba(255, 255, 255, 0.14));
+  border: 1px solid var(--poster-chip-border, rgba(255, 255, 255, 0.22));
+  color: var(--poster-ink, var(--ink));
+  transition: transform 0.18s var(--ease), background-color 0.18s var(--ease);
+}
+
+.myspace-poster-icon-btn:hover {
+  transform: translateY(-1px);
+  background: #ffffff;
+  color: #141c33;
+}
+
+.myspace-board__title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.myspace-board__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.2vw, 3.1rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: var(--poster-ink, var(--ink));
+}
+
+.myspace-board__sub {
+  font-size: 0.96rem;
+  color: var(--poster-muted, var(--muted));
+  line-height: 1.6;
+  max-width: 52ch;
+}
+
+.myspace-board__palette-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.myspace-board__swatch-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: var(--poster-chip-bg, rgba(12, 18, 38, 0.42));
+  padding: 0.45rem;
+  border-radius: 12px;
+  border: 1px solid var(--poster-chip-border, rgba(255, 255, 255, 0.18));
+}
+
+.myspace-board__swatch-color {
+  height: 26px;
+  border-radius: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.myspace-board__swatch-chip code {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--poster-ink, var(--ink));
+}
+
+.myspace-board__social-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--poster-line, var(--line));
+  font-size: 0.78rem;
+  color: var(--poster-muted, var(--muted));
+}
+
+.myspace-board__social-footer strong {
+  color: var(--poster-ink, var(--ink));
+}
+
+/* Panggung poster My Space dengan susunan 3 kartu utama */
+.myspace-stage-poster {
+  margin-inline: auto;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  gap: 2.25rem;
+  border-radius: 28px;
+  transition: max-width 0.35s var(--ease), background 0.35s var(--ease);
+}
+
+.myspace-stage-poster--story {
+  max-width: 480px;
+  padding: 1.75rem 1.4rem;
+}
+
+.myspace-stage-poster--story .hark-wide-stage__content {
+  grid-template-columns: 1fr;
+}
+
+.myspace-stage-poster--square {
+  max-width: 740px;
+}
+
+.myspace-stage-poster--square .hark-wide-stage__content {
+  grid-template-columns: 1fr;
+}
+
+.myspace-stage-poster--wide {
+  max-width: 1180px;
+}
+
+.hark-stage-tab--wide {
+  width: auto;
+  padding-inline: 0.9rem;
+}
+
+/* Kolase mosaik cover album buat mode gabungan */
+.myspace-cover-mosaic {
+  display: grid;
+  gap: 6px;
+  padding: 6px;
+  background: #e6ebf4;
+}
+
+.myspace-cover-mosaic--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.myspace-cover-mosaic--3 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.myspace-cover-mosaic--3 .myspace-mosaic-tile:first-child {
+  grid-row: span 2;
+}
+
+.myspace-cover-mosaic--4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.myspace-mosaic-tile {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #cfd7e8;
+}
+
+.myspace-mosaic-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s var(--ease);
+}
+
+.myspace-mosaic-tile:hover img {
+  transform: scale(1.05);
+}
+
+.myspace-mosaic-tile__label {
+  position: absolute;
+  left: 0.45rem;
+  right: 0.45rem;
+  bottom: 0.45rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(14, 21, 45, 0.78);
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+  font-size: 0.68rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.myspace-mosaic-tile__remove {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 21, 45, 0.72);
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.18s var(--ease), background-color 0.18s var(--ease);
+}
+
+.myspace-mosaic-tile:hover .myspace-mosaic-tile__remove,
+.myspace-mosaic-tile:focus-within .myspace-mosaic-tile__remove {
+  opacity: 1;
+}
+
+.myspace-mosaic-tile__remove:hover {
+  background: #ffffff;
+  color: #141a2b;
+}
+
+.myspace-mosaic-tile__more {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 21, 45, 0.64);
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 700;
+  backdrop-filter: blur(4px);
+}
+
+.myspace-shelf-pill--combined {
+  padding: 0.4rem 0.85rem;
+  gap: 0.55rem;
+}
+
+/* Rak bawah tempat deretan lagu yang tersimpan di My Space */
+.myspace-stage-shelf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.myspace-shelf-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.55rem 0.35rem 0.4rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  transition: all 0.18s var(--ease);
+}
+
+.myspace-shelf-pill:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.42);
+}
+
+.myspace-shelf-pill.is-active {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #141a2b;
+  box-shadow: 0 6px 18px rgba(8, 13, 31, 0.25);
+}
+
+.myspace-shelf-pill__main {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: inherit;
+  text-align: left;
+}
+
+.myspace-shelf-pill__thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.myspace-shelf-pill__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.myspace-shelf-pill__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.myspace-shelf-pill__text strong {
+  font-size: 0.76rem;
+  font-weight: 600;
+  max-width: 15ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.myspace-shelf-pill__text small {
+  font-size: 0.66rem;
+  opacity: 0.78;
+  max-width: 15ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.myspace-shelf-pill__dots {
+  display: flex;
+  gap: 2px;
+  margin-left: 0.2rem;
+}
+
+.myspace-shelf-pill__dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.myspace-shelf-pill__remove {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: inherit;
+  opacity: 0.65;
+}
+
+.myspace-shelf-pill__remove:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* Dock kontrol bawah: tombol rasio ukuran, unduh poster, bagikan, dan bersihkan */
+.myspace-bottom-dock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.myspace-format-footer,
+.myspace-export-dock,
+.myspace-reset-dock {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--control-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.myspace-format-footer {
+  gap: 0.85rem 1.25rem;
+  padding: 0.55rem 1.2rem;
+}
+
+.myspace-export-dock {
+  gap: 0.5rem;
+  padding: 0.55rem 0.7rem;
+}
+
+.myspace-reset-dock {
+  padding: 0.55rem 0.7rem;
+}
+
+.myspace-format-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.myspace-format-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  min-height: 42px;
+  padding: 0.48rem 1.05rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  color: var(--muted);
+  box-shadow: var(--control-shadow);
+  font-size: 0.8rem;
+  transition: all 0.18s var(--ease);
+}
+
+.myspace-format-pill strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.myspace-format-pill span {
+  font-size: 0.72rem;
+  opacity: 0.75;
+}
+
+.myspace-format-pill:hover {
+  background: var(--control-bg-hover);
+  border-color: var(--control-border-hover);
+  box-shadow: var(--control-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.myspace-format-pill.is-active {
+  background: var(--active-bg);
+  border-color: var(--active-border);
+  color: var(--active-ink);
+  box-shadow: var(--control-shadow-hover);
+}
+
+.myspace-format-pill.is-active strong,
+.myspace-format-pill.is-active span {
+  color: var(--active-ink);
+  opacity: 1;
+}
+
+.myspace-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 42px;
+  padding: 0.48rem 1.15rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  color: var(--ink);
+  box-shadow: var(--control-shadow);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.18s var(--ease);
+}
+
+.myspace-reset-btn:hover {
+  background: var(--control-bg-hover);
+  border-color: var(--control-border-hover);
+  box-shadow: var(--control-shadow-hover);
+  transform: translateY(-1px);
+}
+
+/* Dialog konfirmasi modal sebelum user menghapus semua lagu */
+.confirm-modal {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  padding: clamp(2.25rem, 4.5vw, 2.85rem) clamp(2rem, 4vw, 2.75rem);
+  border-radius: 26px;
+  background: var(--surface-solid);
+  border: 1px solid var(--control-border);
+  box-shadow: var(--shadow-lift);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.75rem;
+}
+
+.confirm-modal__text {
+  font-size: 1.04rem;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 36ch;
+}
+
+.confirm-modal__text strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.confirm-modal__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.confirm-modal__actions .btn {
+  width: 100%;
+  min-height: 48px;
+}
+
+@media (max-width: 480px) {
+  .confirm-modal__actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Media queries buat nyesuaiin tampilan di tablet dan layar HP */
+
+@media (max-width: 860px) {
+  .site-nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-header__actions {
+    margin-left: auto;
+  }
+
+  .mobile-nav {
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+    border-top: 1px solid transparent;
+    transition: max-height 0.25s var(--ease), border-color 0.25s var(--ease);
+  }
+
+  .mobile-nav.is-open {
+    max-height: 320px;
+    border-top-color: var(--line);
+  }
+
+  .mobile-nav__list {
+    display: flex;
+    flex-direction: column;
+    padding-block: 0.5rem 1rem;
+  }
+
+  .mobile-nav__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 48px;
+    padding-inline: 0.25rem;
+    font-size: 0.96rem;
+    font-weight: 500;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobile-nav__link:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-nav__link.is-active {
+    font-weight: 700;
+  }
+
+  .mobile-nav__index {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .modal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal__art {
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .hark-hero__main-album {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .hark-matrix-row {
+    grid-template-columns: 32px minmax(0, 1fr) 64px;
+  }
+
+  .hark-matrix-row__idx,
+  .hark-matrix-row__mood {
+    display: none;
+  }
+
+  .hark-custom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .album-card__body {
+    padding: 0.75rem;
+    gap: 0.45rem;
+  }
+
+  .album-card__title {
+    font-size: 0.92rem;
+  }
+
+  .album-card__artist {
+    font-size: 0.78rem;
+  }
+
+  .album-card__store {
+    display: none;
+  }
+
+  .modal__actions .btn {
+    flex: 1 1 100%;
+  }
+}
